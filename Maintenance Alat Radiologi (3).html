@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maintenance Alat Radiologi</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7f9;--card:#fff;--tx:#1c2430;--mu:#6b7686;--bd:#dde2ea;--ac:#0b6e99;--ok:#1f8a4c;--wr:#b86e00;--er:#c0392b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12161c;--card:#1b212a;--tx:#e8ecf2;--mu:#98a3b3;--bd:#2c3542;--ac:#4cb3e0;--ok:#4cc27f;--wr:#e0a63a;--er:#ef6f60}}
+:root[data-theme="dark"]{--bg:#12161c;--card:#1b212a;--tx:#e8ecf2;--mu:#98a3b3;--bd:#2c3542;--ac:#4cb3e0;--ok:#4cc27f;--wr:#e0a63a;--er:#ef6f60}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--bd);padding:14px 20px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+h1{font-size:18px;margin:0}h2{font-size:16px;margin:24px 0 10px}
+main{max-width:980px;margin:0 auto;padding:16px 20px 40px}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav button{background:none;border:1px solid var(--bd);color:var(--tx);padding:7px 14px;border-radius:8px;cursor:pointer}
+nav button.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.st b{display:block;font-size:26px}.st span{color:var(--mu);font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.f{margin-top:8px}.f input,.f select{flex:1;min-width:140px}
+input,select,button{font:inherit;padding:7px 10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
+button.p,.f button{background:var(--ac);color:#fff;border-color:var(--ac);cursor:pointer}
+.b{font-size:12px;padding:2px 8px;border-radius:99px;border:1px solid var(--bd);color:var(--mu)}
+.b.er{color:var(--er);border-color:var(--er)}.b.wr{color:var(--wr);border-color:var(--wr)}.b.ok{color:var(--ok);border-color:var(--ok)}.b.ac{color:var(--ac);border-color:var(--ac)}
+.er{color:var(--er)}.wr{color:var(--wr)}
+.mu{color:var(--mu)}p{margin:6px 0}.lg{font-size:13px;color:var(--mu);border-left:2px solid var(--bd);padding-left:8px;margin:2px 0}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:560px}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--bd)}th{color:var(--mu);font-weight:500;font-size:13px}
+#mode{font-size:12px;color:var(--mu)}th[colspan]{text-align:center}.ft{display:inline-block;position:relative;margin:4px 6px 4px 0}.ft img{height:90px;border-radius:6px;border:1px solid var(--bd);display:block}.ft button{position:absolute;top:2px;right:2px;padding:0 6px}.w{width:100%;max-width:560px}.sub{display:block;margin:4px 0 0 24px}.rep td.c{text-align:center}.eb{font-size:12px;padding:2px 8px}.ov{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:99;padding:20px}.dlg{background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:12px;padding:18px;max-width:440px;width:100%}.dlg p{margin:0 0 14px}.dlg .row{justify-content:flex-end}.dc{background:var(--ac);border-color:var(--ac);color:#fff;cursor:pointer}.dc.dng{background:var(--er);border-color:var(--er)}.dn{cursor:pointer}.ft button{font-size:11px}.ta{flex:1 1 100%;width:100%;min-height:64px;resize:vertical;overflow:hidden;font:inherit;line-height:1.45;padding:8px 10px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}.rep td,.tw td,.lg{white-space:pre-wrap}.f input[type=checkbox]{flex:none;min-width:0}.ft.pdf button{position:static;padding:0 6px}.card.rep{background:#fff;color:#000;font-family:'Times New Roman',Times,serif}.rep table{border:1px solid #000}.rep th,.rep td{border:1px solid #000;color:#000;vertical-align:top;font-size:14px}.rep th{text-align:center;vertical-align:middle}.rep th.noprint,.rep td.noprint{border:none}@media print{.card.rep{border:none;padding:0}header,.noprint,#mode{display:none!important}body{background:#fff;color:#000}}
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head><body>
+<header><h1>🩻 Maintenance Alat Radiologi</h1><nav id="nav"></nav></header>
+<main><div id="mode"></div><div id="v"></div></main>
+<script>
+const FLOW=['Baru','Diverifikasi','Dalam Perbaikan','Menunggu Sparepart','Uji Fungsi','Selesai'];
+let db=null,S={alat:[],tiket:[],lap:[],nm:[]},tab='dash',L={a:'',b:new Date().toISOString().slice(0,7)};
+const $=s=>document.querySelector(s);
+function grow(el){el.style.height='auto';el.style.height=(el.scrollHeight+2)+'px'}
+function ask(msg,ok,single){ok=ok||'Hapus';return new Promise(r=>{const o=document.createElement('div');o.className='ov';
+ o.innerHTML='<div class="dlg"><p></p><div class="row"><button class="dn">Batal</button><button class="dc'+(ok==='Hapus'?' dng':'')+'"></button></div></div>';
+ o.querySelector('p').textContent=msg;o.querySelector('.dc').textContent=ok;if(single)o.querySelector('.dn').remove();
+ document.body.appendChild(o);const done=v=>{o.remove();r(v)};
+ o.querySelector('.dc').onclick=()=>done(true);const n=o.querySelector('.dn');if(n)n.onclick=()=>done(false);
+ o.onclick=e=>{if(e.target===o)done(!!single)}})}
+window.alert=m=>{ask(String(m),'OK',true)};const today=()=>new Date().toLocaleDateString('en-CA');const ld=s=>!s?'':s.length===10?s:new Date(s).toLocaleDateString('en-CA');
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const dd=a=>a.kal?Math.ceil((new Date(a.kal)-new Date())/864e5):null;
+function lsLoad(){try{return JSON.parse(localStorage.getItem('rad')||'')}catch(e){return null}}
+function lsSave(){try{localStorage.setItem('rad',JSON.stringify(S))}catch(e){}}
+function fail(e){alert(e&&e.code==='invalid_argument'?'Anda tidak punya izin mengubah data.':'Gagal menyimpan: '+((e&&e.message)||e))}
+async function add(c,o){if(db){try{await db.collection(c).add(o)}catch(e){fail(e)}}else{o.id='l'+Date.now()+Math.random().toString(36).slice(2,5);S[c].push(o);lsSave();render()}}
+async function upd(c,id,o){if(db){try{await db.collection(c).doc(id).update(o)}catch(e){fail(e)}}else{const x=S[c].find(y=>y.id===id);if(x)Object.assign(x,o);lsSave();render()}}
+function sub(c){db.collection(c).onSnapshot(s=>{S[c]=s.docs.map(d=>Object.assign({},typeof d.data==='function'?d.data():d.data,{id:d.id}));render()},()=>{})}
+function go(t){tab=t;render()}
+const stat=(l,n,c)=>`<div class="card st"><b class="${c||''}">${n}</b><span>${l}</span></div>`;
+async function addA(){const nama=$('#a_n').value.trim();if(!nama)return alert('Nama alat wajib diisi.');
+ await add('alat',{nama,tipe:$('#a_t').value.trim(),serial:$('#a_s').value.trim(),ruang:$('#a_r').value.trim(),kalT:$('#a_c').value,ukes:$('#a_u').value,paparan:$('#a_p').value,status:'Layak pakai'});go('alat')}
+function dash(){const A=S.alat,act=S.tiket.filter(t=>t.status!=='Selesai'),rusak=A.filter(a=>a.status==='Rusak').length,
+ due=jadwal(A);
+ return `<div class="g">${stat('Total alat',A.length)}${stat('Alat rusak',rusak,rusak?'er':'')}${stat('Kasus kerusakan aktif',act.length,act.length?'wr':'')}${stat('Jadwal segera jatuh tempo',due.length,due.length?'wr':'')}</div>
+ <h2>Kasus kerusakan aktif</h2>${act.length?act.map(t=>{const z=lastJ(t);return `<div class="card"><div class="row"><b>${esc(t.alatNama)}</b><span class="b ac">${esc(t.status)}</span></div><p>${esc(z.j||'')}</p><p class="mu">${fmt(ld(rt(z)))}</p><button onclick="K='${ld(rt(z)).slice(0,7)}';go('kru')">Buka di Laporan Kerusakan Medis</button></div>`}).join(''):'<p class="mu">Tidak ada kasus kerusakan aktif.</p>'}
+ <h2>Jadwal kalibrasi / uji kesesuaian</h2>${due.length?due.map(x=>`<div class="card"><b>${esc(x.a.nama)}</b> <span class="mu">${esc(x.a.ruang)}</span><br>${x.j}: ${x.l<0?'<span class="er">Lewat '+(-x.l)+' hari</span>':x.l+' hari lagi'} (jatuh tempo ${fmt(x.t)})</div>`).join(''):'<p class="mu">Belum ada jadwal yang mendekati jatuh tempo.</p>'}`}
+function alat(){const A=S.alat;
+ return `${aform()}
+ <h2>Daftar alat</h2>${A.length?`<div class="card tw"><table><tr><th>Alat</th><th>Tipe / No. seri</th><th>Ruangan</th><th>Kalibrasi terakhir</th><th>Uji kesesuaian terakhir</th><th>Uji paparan terakhir</th><th>Status</th><th>Riwayat</th><th></th></tr>${A.map(a=>`<tr><td><b>${esc(a.nama)}</b></td><td>${esc(a.tipe)} ${esc(a.serial)}</td><td>${esc(a.ruang)}</td><td>${cel(a.kalT,plus(a.kalT,1),30)}</td><td>${cel(a.ukes,plus(a.ukes,4),180)}</td><td>${fmt(a.paparan)||'-'}</td><td><span class="b ${a.status==='Rusak'?'er':'ok'}">${esc(a.status)}</span></td><td>${S.tiket.filter(t=>t.alatId===a.id).length} kasus</td><td><button class="eb" onclick="editA('${a.id}')">Edit</button> <button class="eb" onclick="delA('${a.id}')">Hapus</button></td></tr>`).join('')}</table></div>`:'<p class="mu">Belum ada alat. Tambahkan alat pertama di atas.</p>'}`}
+const fmt=s=>s?s.split('-').reverse().join('/'):'';
+const lapKey=()=>L.a+'-'+L.b;
+const getLap=()=>S.lap.find(x=>x.id===lapKey())||{cek:{},rows:[]};
+async function putLap(d){const key=lapKey();d.alatId=L.a;d.bulan=L.b;
+ if(db){try{await db.collection('lap').doc(key).set(d)}catch(e){fail(e)}}
+ else{const i=S.lap.findIndex(x=>x.id===key);d.id=key;if(i<0)S.lap.push(d);else S.lap[i]=d;lsSave();render()}}
+function cek(k,v){const d=getLap();putLap({cek:Object.assign({},d.cek,{[k]:v}),rows:d.rows||[]})}
+let RE=-1;
+async function addR(){const g=i=>$('#r_'+i).value.trim();if(!g('k')&&!g('ket'))return alert('Isi kegiatan atau keterangan.');
+ const d=getLap(),nr={tgl:$('#r_t').value,keg:g('k'),tl:g('l'),ket:g('ket')},R=d.rows||[],i=RE;RE=-1;
+ await putLap({cek:d.cek||{},rows:i>=0&&R[i]?R.map((x,j)=>j===i?nr:x):R.concat([nr])})}
+function editRB(i){RE=i;render();const f=document.getElementById('lapform');if(f)f.scrollIntoView({behavior:'smooth'})}
+async function delR(i){if(!await ask('Hapus baris kegiatan ini dari laporan bulanan?'))return;const d=getLap();RE=-1;await putLap({cek:d.cek||{},rows:(d.rows||[]).filter((_,j)=>j!==i)})}
+function lap(){const A=S.alat;if(!A.length)return '<h2>Laporan Bulanan</h2><p class="mu">Tambahkan alat dulu di menu Alat.</p>';
+ if(!A.find(a=>a.id===L.a))L.a=A[0].id;
+ const a=A.find(x=>x.id===L.a),d=getLap(),c=d.cek||{},R=d.rows||[],F=c.fotos||[],ed=RE>=0&&R[RE]?R[RE]:null;
+ const bl=new Date(L.b+'-01T00:00:00').toLocaleDateString('id-ID',{month:'long',year:'numeric'}).toUpperCase();
+ const ck=(k,l)=>`<label><input type="checkbox" ${c[k]?'checked':''} onchange="cek('${k}',this.checked)"> ${l}</label>`;
+ const tx=(k,ph)=>`<textarea id="c_${k}" class="ta w" rows="2" oninput="grow(this)" placeholder="${ph}" onchange="cek('${k}',this.value.trim())">${esc(c[k])}</textarea>`;
+ const dt=k=>`<input id="c_${k}" type="date" value="${esc(c[k])}" onchange="cek('${k}',this.value)">`;
+ return `<h2>Laporan Bulanan</h2><div class="card row noprint"><select onchange="L.a=this.value;RE=-1;this.blur();render()">${A.map(x=>`<option value="${esc(x.id)}" ${x.id===L.a?'selected':''}>${esc(x.nama)}${x.ruang?' — '+esc(x.ruang):''}</option>`).join('')}</select><input type="month" value="${L.b}" onchange="if(this.value){L.b=this.value;RE=-1;this.blur();render()}"></div>
+<div class="card"><b>${esc(a.nama)} — ${bl}</b><p class="mu">Centang jika sudah dilakukan</p>
+<p>${ck('backup','Back up data bulanan')}<span class="sub">Backup dari tanggal ${dt('backupDari')} sampai tanggal ${dt('backupSampai')}</span></p>
+<p>${ck('bersih','Pembersihan alat bulanan')}<span class="sub">${F.map(id=>`<span class="ft">${imgTag(id,'Foto pembersihan')}<button class="noprint" onclick="delF('${id}')">Hapus</button></span>`).join('')}${(AS||db)?`<label class="noprint">Foto pembersihan: <input type="file" accept="image/*" multiple onchange="upF(this)"></label>`:'<span class="mu noprint">Upload foto tidak tersedia karena aplikasi belum terhubung ke penyimpanan online. Buka lewat tautan di claude.ai dengan akun yang sudah masuk.</span>'}</span></p>
+<p>${ck('laporan','Pengisian laporan alat bulanan')}</p>
+<p>${ck('suhu','Pengisian suhu dan kelembapan ruangan')}<span class="sub">${tx('suhuKet','Kendala jika suhu / kelembapan ruangan tidak sesuai (kosongkan bila tidak ada)')}</span></p>
+<p>${ck('kartu','Pengisian kartu pemeliharaan alat')}<span class="sub">${tx('kartuKet','Kendala yang ditulis di kartu pemeliharaan alat (kosongkan bila tidak ada)')}</span></p>
+<p>${ck('validasi','Validasi ka inst')}</p></div>
+<div class="card tw"><table><tr><th>No</th><th>Tanggal</th><th>Kegiatan</th><th>Tindak lanjut</th><th>Keterangan</th><th class="noprint"></th></tr>${R.map((r,i)=>`<tr><td>${i+1}</td><td>${fmt(r.tgl)}</td><td>${esc(r.keg)}</td><td>${esc(r.tl)}</td><td>${esc(r.ket)}</td><td class="noprint"><button class="eb" onclick="editRB(${i})">Edit</button> <button class="eb" onclick="delR(${i})">Hapus</button></td></tr>`).join('')||'<tr><td colspan="6" class="mu">Belum ada kegiatan bulan ini.</td></tr>'}</table></div>
+<div class="noprint" style="margin:10px 0"><button class="p" onclick="pdfLapBln()">Cetak (unduh PDF)</button></div>
+<div class="card noprint" id="lapform"><b>${ed?'Edit baris kegiatan':'Tambah baris'}</b><div class="row f"><input id="r_t" type="date" value="${ed?esc(ed.tgl):today()}"><textarea id="r_k" class="ta" rows="2" oninput="grow(this)" placeholder="Kegiatan">${ed?esc(ed.keg):''}</textarea><textarea id="r_l" class="ta" rows="2" oninput="grow(this)" placeholder="Tindak lanjut">${ed?esc(ed.tl):''}</textarea><textarea id="r_ket" class="ta" rows="2" oninput="grow(this)" placeholder="Keterangan">${ed?esc(ed.ket):''}</textarea>${ed?`<button onclick="addR()">Simpan perubahan</button><button onclick="RE=-1;render()" style="background:none;color:var(--tx)">Batal</button>`:`<button onclick="addR()">Tambah</button>`}</div></div>`}
+let NE='';
+const KAT=['AC','Bangunan dan Interior','Listrik','Air dan Sanitasi','Furnitur'];
+function nmform(){const e=S.nm.find(x=>x.id===NE)||{},v=k=>esc(e[k]||'');
+ return `<div class="card noprint"><b>${e.id?'Edit data kerusakan non medis':'Tambah data kerusakan non medis'}</b><div class="row f"><label class="mu">Tanggal lapor <input id="n_t" type="date" value="${e.id?v('tgl'):today()}"></label><input id="n_l" placeholder="Lokasi / peralatan (mis. Ruang CT Scan (AC Standing))" value="${v('lokasi')}"><input id="n_k" list="katl" placeholder="Kategori (mis. AC)" value="${v('kat')}"><datalist id="katl">${KAT.map(k=>`<option value="${k}">`).join('')}</datalist><textarea id="n_u" class="ta" rows="2" oninput="grow(this)" placeholder="Uraian kerusakan">${v('uraian')}</textarea><textarea id="n_i" class="ta" rows="2" oninput="grow(this)" placeholder="Tindak lanjut IPSRS">${v('tl')}</textarea><label class="mu">Tanggal selesai <input id="n_s" type="date" value="${v('selesai')}"></label><select id="n_st"><option ${e.status!=='Selesai'?'selected':''}>Tindak lanjut</option><option ${e.status==='Selesai'?'selected':''}>Selesai</option></select>${e.id?`<button onclick="saveN()">Simpan perubahan</button><button onclick="NE='';render()" style="background:none;color:var(--tx)">Batal</button>`:`<button onclick="addN()">Tambah</button>`}</div></div>`}
+function nmVal(){const g=i=>$('#n_'+i).value.trim();if(!g('l')||!g('u')){alert('Isi lokasi/peralatan dan uraian kerusakan.');return null}
+ return {tgl:$('#n_t').value||today(),lokasi:g('l'),kat:g('k'),uraian:g('u'),tl:g('i'),selesai:$('#n_s').value,status:$('#n_st').value}}
+async function addN(){const o=nmVal();if(!o)return;K=o.tgl.slice(0,7);await add('nm',Object.assign(o,{fk:false,spk:false,bukti:[]}))}
+async function saveN(){const o=nmVal();if(!o)return;const id=NE;NE='';await upd('nm',id,o)}
+function editN(id){NE=id;render();scrollTo({top:0,behavior:'smooth'})}
+async function delN(id){if(!await ask('Hapus data kerusakan ini beserta bukti yang diunggah?'))return;
+ const n=S.nm.find(x=>x.id===id);
+ if(db){try{await db.collection('nm').doc(id).delete()}catch(e){return fail(e)}}else{S.nm=S.nm.filter(x=>x.id!==id);lsSave();render()}
+ if(n)for(const b of (n.bukti||[]))await rmFile(b.id);}
+const flagN=(c,id,k,v)=>upd(c,id,{[k]:v});
+async function upB(c,id,j,el){const fs=[...el.files];if(!fs.length||(!AS&&!db))return;el.disabled=true;
+ try{const add2=[];
+  for(const f of fs){const img=f.type.startsWith('image/');
+   if(AS){const r=await AS.upload(img?await shrink(f):f,(!f.type&&/\.pdf$/i.test(f.name))?{type:'application/pdf'}:undefined);add2.push({id:r.id,j,name:f.name,ct:r.contentType})}
+   else{if(!img)throw new Error('File PDF hanya bisa diunggah dari akun yang punya akses penyimpanan file. Foto tetap bisa.');const fid=await putFoto(f);if(!fid)throw new Error('Foto tidak bisa diproses atau terlalu besar.');add2.push({id:fid,j,name:f.name,ct:'image/jpeg'})}}
+  const cur=S[c].find(x=>x.id===id);if(!cur)return;
+  await upd(c,id,{bukti:(cur.bukti||[]).concat(add2),[j==='form'?'fk':'spk']:true})}
+ catch(e){alert('Gagal mengunggah: '+((e&&e.message)||e))}
+ finally{el.disabled=false;el.value=''}}
+async function delB(c,id,bid){if(!await ask('Hapus bukti ini?'))return;const n=S[c].find(x=>x.id===id);if(!n)return;
+ await upd(c,id,{bukti:(n.bukti||[]).filter(b=>b.id!==bid)});await rmFile(bid)}
+function bk(c,n,items){return items.map(([j,f,l])=>`<p><label><input type="checkbox" ${n[f]?'checked':''} onchange="flagN('${c}','${n.id}','${f}',this.checked)"> ${l}</label><span class="sub">${(n.bukti||[]).filter(b=>b.j===j).map(b=>/^image\//.test(b.ct)?`<span class="ft">${imgTag(b.id,l)}<button onclick="delB('${c}','${n.id}','${b.id}')">Hapus</button></span>`:`<span class="ft pdf"><a href="/_blob/${b.id}" target="_blank">📄 ${esc(b.name||'berkas')}</a> <button onclick="delB('${c}','${n.id}','${b.id}')">Hapus</button></span>`).join('')}${(AS||db)?`<label>Upload bukti: <input type="file" accept="image/*,application/pdf" multiple onchange="upB('${c}','${n.id}','${j}',this)"></label>`:'<span class="mu">Upload tidak tersedia karena aplikasi belum terhubung ke penyimpanan online.</span>'}</span></p>`).join('')}
+function nmBukti(R){return R.length?R.map((n,i)=>`<div class="card"><b>${i+1}. ${esc(n.lokasi)}</b> <span class="mu">${esc(n.uraian)}</span>${bk('nm',n,[['spk','spk','Form SPK IPSRS']].concat(n.fk||(n.bukti||[]).some(b=>b.j==='form')?[['form','fk','Form kerusakan alat']]:[]))}</div>`).join(''):'<p class="mu">Belum ada data bulan ini.</p>'}
+function medBukti(T){return T.length?T.map((t,i)=>{const R=rowsOf(t);return `<div class="card"><div class="row"><b>${i+1}. ${esc(t.alatNama)}</b><span class="b ${t.status==='Selesai'?'ok':'ac'}">${esc(t.status)}</span><select onchange="ubahStatus('${t.id}',this.value)">${FLOW.map(x=>`<option ${x===t.status?'selected':''}>${x}</option>`).join('')}</select></div>${R.map((e,x)=>`<div class="lg"><b>${x+1}.</b> ${e.t?fmt(ld(e.t)):'-'} — ${esc(an(e,t))} — ${esc(e.j||'-')}${e.p?' — '+esc(e.p):''}<br>Tindak lanjut: ${e.tt?fmt(ld(e.tt)):'-'} — ${esc(e.tn||'-')}${e.te?' — '+esc(e.te):''} <button class="eb" onclick="editR('${t.id}',${x})">Edit</button> <button class="eb" onclick="delRow('${t.id}',${x})">Hapus</button></div>`).join('')}<details><summary class="mu">Riwayat status</summary>${(t.log||[]).map(l=>`<div class="lg">${fmt(ld(l.t))} — <b>${esc(l.s)}</b>${l.n?': '+esc(l.n):''}</div>`).join('')||'<div class="lg">-</div>'}</details>${bk('tiket',t,[['form','fk','Form kerusakan alat']])}</div>`}).join(''):'<p class="mu">Belum ada data bulan ini.</p>'}
+let EK=null;
+function editR(id,i){EK={id,i};PRE=null;render();scrollTo({top:0,behavior:'smooth'})}
+function kedit(){const t=S.tiket.find(x=>x.id===EK.id),e=t&&rowsOf(t)[EK.i];if(!e){EK=null;return kform()}
+ const v=x=>esc(e[x]||'');
+ return `<div class="card noprint"><b>Edit baris laporan</b><p class="mu" style="margin:8px 0 0">Kerusakan (diisi radiografer)</p><div class="row f"><label class="mu">Tanggal kerusakan <input id="x_t" type="date" value="${esc(ld(e.t))}"></label><select id="x_a">${S.alat.map(a=>`<option value="${esc(a.id)}" ${a.id===(e.a||t.alatId)?'selected':''}>${esc(a.nama)}${a.tipe?' — '+esc(a.tipe):''}</option>`).join('')}</select><input id="x_p" placeholder="Petugas radiologi" value="${v('p')}"><textarea id="x_j" class="ta" rows="2" oninput="grow(this)" placeholder="Jenis kerusakan / yang dilakukan radiografer">${v('j')}</textarea></div><p class="mu" style="margin:8px 0 0">Tindak lanjut (diisi ATEM)</p><div class="row f"><label class="mu">Tanggal tindak lanjut <input id="x_tt" type="date" value="${esc(ld(e.tt))}"></label><input id="x_te" placeholder="Petugas ATEM" value="${v('te')}"><label class="mu">Status kasus <select id="x_s">${FLOW.map(s=>`<option ${s===t.status?'selected':''}>${s}</option>`).join('')}</select></label><textarea id="x_tn" class="ta" rows="2" oninput="grow(this)" placeholder="Keterangan tindak lanjut">${v('tn')}</textarea></div><div class="row f"><button onclick="saveEK()">Simpan perubahan</button><button onclick="EK=null;render()" style="background:none;color:var(--tx)">Batal</button></div></div>`}
+async function saveEK(){const t=S.tiket.find(x=>x.id===EK.id);if(!t)return;const i=EK.i,al=S.alat.find(x=>x.id===$('#x_a').value),j=$('#x_j').value.trim(),tn=$('#x_tn').value.trim(),te=$('#x_te').value.trim(),tg=$('#x_t').value,tt=$('#x_tt').value,sel=$('#x_s').value;
+ if(!al)return alert('Pilih alat.');if(!j&&!tn&&!te&&!tt)return alert('Isi jenis kerusakan atau tindak lanjut.');
+ const ne={t:(j||tg)?(tg||today()):'',a:al.id,an:al.nama,j,p:$('#x_p').value.trim(),tt:(tn||te||tt)?(tt||tg||today()):'',tn,te};
+ const R=rowsOf(t).map((e,x)=>x===i?ne:e),o={rows:R};
+ if(i===0&&ne.j)Object.assign(o,{alatId:al.id,alatNama:al.nama,keluhan:ne.j,pelapor:ne.p,tgl:rt(ne)});
+ const lt=R.filter(x=>x.te).pop();if(lt)o.teknisi=lt.te;
+ if(sel!==t.status){o.status=sel;o.log=(t.log||[]).concat([{t:today(),s:sel,n:ne.tn||''}])}
+ K=rt(ne).slice(0,7);EK=null;await upd('tiket',t.id,o);
+ if(sel!==t.status)await upd('alat',al.id,{status:sel==='Selesai'?'Layak pakai':'Rusak'});render()}
+async function ubahStatus(id,st){const t=S.tiket.find(x=>x.id===id);if(!t)return;
+ await upd('tiket',id,{status:st,log:(t.log||[]).concat([{t:today(),s:st,n:''}])});
+ const a=S.alat.find(x=>x.id===(rowsOf(t).slice(-1)[0].a||t.alatId));if(a)await upd('alat',a.id,{status:st==='Selesai'?'Layak pakai':'Rusak'})}
+function nonmedis(){const bl=new Date(K+'-01T00:00:00').toLocaleDateString('id-ID',{month:'long',year:'numeric'});
+ const R=S.nm.filter(n=>ld(n.tgl).slice(0,7)===K).sort((a,b)=>ld(a.tgl).localeCompare(ld(b.tgl)));
+ return `<h2 class="noprint">Laporan Kerusakan Non Medis</h2>${nmform()}<div class="card row noprint"><input type="month" value="${K}" onchange="if(this.value){K=this.value;this.blur();render()}"></div>
+<div class="card rep"><div style="text-align:center"><b>LAPORAN KERUSAKAN ALAT NON MEDIS<br>INSTALASI RADIOLOGI</b></div><p><b>Bulan : ${bl}</b></p><div class="tw"><table><tr><th>No</th><th>Tanggal Lapor</th><th>Lokasi/Peralatan</th><th>Kategori</th><th>Uraian Kerusakan</th><th>Tindak Lanjut IPSRS</th><th>Tanggal Selesai</th><th>Status</th><th class="noprint"></th></tr>${R.map((n,i)=>`<tr><td class="c">${i+1}</td><td class="c">${fmt(ld(n.tgl))}</td><td>${esc(n.lokasi)}</td><td class="c">${esc(n.kat)}</td><td>${esc(n.uraian)}</td><td>${esc(n.tl||'-')}</td><td class="c">${n.selesai?fmt(n.selesai):'-'}</td><td class="c">${esc(n.status)}</td><td class="noprint"><button class="eb" onclick="editN('${n.id}')">Edit</button> <button class="eb" onclick="delN('${n.id}')">Hapus</button></td></tr>`).join('')||'<tr><td colspan="9" class="mu">Tidak ada kerusakan non medis tercatat bulan ini.</td></tr>'}</table></div></div>
+<div class="noprint" style="margin:10px 0 4px"><button class="p" onclick="pdfNonMedis()">Cetak (unduh PDF)</button></div>
+<h2 class="noprint">Ceklis bukti form SPK IPSRS</h2><div class="noprint">${nmBukti(R)}</div>`}
+const imgData0=id=>new Promise(r=>{const i=new Image();i.onload=()=>{try{const k=Math.min(1,1000/Math.max(i.width,i.height)),cv=document.createElement('canvas');cv.width=Math.round(i.width*k);cv.height=Math.round(i.height*k);cv.getContext('2d').drawImage(i,0,0,cv.width,cv.height);r({d:cv.toDataURL('image/jpeg',.8),w:cv.width,h:cv.height})}catch(e){r(null)}};i.onerror=()=>r(null);i.src='/_blob/'+id});
+const FC={},isD=id=>String(id).startsWith('d:');
+function shrinkURL(f,max,q){return new Promise(r=>{const i=new Image(),u=URL.createObjectURL(f);i.onload=()=>{const k=Math.min(1,max/Math.max(i.width,i.height)),cv=document.createElement('canvas');cv.width=Math.round(i.width*k);cv.height=Math.round(i.height*k);cv.getContext('2d').drawImage(i,0,0,cv.width,cv.height);URL.revokeObjectURL(u);r(cv.toDataURL('image/jpeg',q))};i.onerror=()=>r(null);i.src=u})}
+async function putFoto(f){let d=null;for(const [m,q] of [[1000,.6],[800,.5],[640,.4],[480,.35]]){d=await shrinkURL(f,m,q);if(!d)return null;if(d.length<230000)break}
+ if(!d||d.length>=240000)return null;const ref=await db.collection('foto').add({d,n:f.name||'foto'});FC['d:'+ref.id]=d;return 'd:'+ref.id}
+async function loadFoto(id){if(FC[id]||!db)return;try{const sn=await db.collection('foto').doc(id.slice(2)).get(),v=sn.exists&&sn.data();if(v&&v.d){FC[id]=v.d;document.querySelectorAll('img[data-fid="'+id+'"]').forEach(i=>i.src=v.d)}}catch(e){}}
+function zoom(id){const o=document.createElement('div');o.className='ov';o.innerHTML='<img style="max-width:100%;max-height:100%;border-radius:8px">';o.querySelector('img').src=FC[id]||'';o.onclick=()=>o.remove();document.body.appendChild(o)}
+const imgTag=(id,alt)=>isD(id)?`<a href="#" onclick="zoom('${id}');return false"><img data-fid="${id}"${FC[id]?` src="${FC[id]}"`:''} alt="${alt}"></a>`:`<a href="/_blob/${id}" target="_blank"><img src="/_blob/${id}" alt="${alt}"></a>`;
+async function rmFile(id){try{if(isD(id)){if(db)await db.collection('foto').doc(id.slice(2)).delete()}else if(AS)await AS.delete(id)}catch(e){}}
+const imgData=async id=>{if(!isD(id))return imgData0(id);await loadFoto(id);const u=FC[id];if(!u)return null;return new Promise(r=>{const i=new Image();i.onload=()=>r({d:u,w:i.width,h:i.height});i.onerror=()=>r(null);i.src=u})};
+async function pdfLapBln(){const A=S.alat.find(x=>x.id===L.a);if(!A)return alert('Pilih alat dulu.');
+ if(!window.jspdf||!DL){alert('Unduh PDF belum tersedia di tampilan ini. Buka aplikasi lewat tautan di claude.ai dengan akun yang sudah masuk. Sementara, dialog cetak browser dibuka.');window.print();return}
+ const d=getLap(),c=d.cek||{},R=d.rows||[],F=c.fotos||[],doc=new window.jspdf.jsPDF({unit:'mm',format:'a4'}),W=doc.internal.pageSize.getWidth(),H=doc.internal.pageSize.getHeight();
+ const bl=new Date(L.b+'-01T00:00:00').toLocaleDateString('id-ID',{month:'long',year:'numeric'}).toUpperCase();
+ let y=16;doc.setFont('times','bold');doc.setFontSize(13);doc.text(bl,W/2,y,{align:'center'});y+=8;
+ doc.setFontSize(11);doc.text('Alat : '+[A.nama,A.tipe].filter(Boolean).join(' ')+(A.ruang?' - '+A.ruang:''),15,y);y+=8;doc.setFont('times','normal');
+ [['backup','Back up data bulanan',(c.backupDari||c.backupSampai)?'Backup dari tanggal '+(fmt(c.backupDari)||'-')+' sampai tanggal '+(fmt(c.backupSampai)||'-'):''],
+  ['bersih','Pembersihan alat bulanan',F.length?F.length+' foto pembersihan terlampir di bawah':''],
+  ['laporan','Pengisian laporan alat bulanan',''],
+  ['suhu','Pengisian suhu dan kelembapan ruangan',c.suhuKet?'Kendala: '+c.suhuKet:''],
+  ['kartu','Pengisian kartu pemeliharaan alat',c.kartuKet?'Kendala: '+c.kartuKet:''],
+  ['validasi','Validasi ka inst','']].forEach(([k,l,x])=>{doc.text((c[k]?'[x]  ':'[   ]  ')+l,15,y);y+=5.5;if(x){const ls=doc.splitTextToSize(x,W-42);doc.text(ls,25,y);y+=ls.length*5}});
+ doc.autoTable({startY:y+3,head:[['No','Tanggal','Kegiatan','Tindak lanjut','Keterangan']],body:R.length?R.map((r,i)=>[String(i+1),fmt(r.tgl),r.keg||'-',r.tl||'-',r.ket||'-']):[[{content:'Belum ada kegiatan bulan ini.',colSpan:5}]],theme:'grid',margin:{left:15,right:15},styles:{font:'times',fontSize:10,textColor:0,lineColor:0,lineWidth:.2,cellPadding:2,valign:'top',overflow:'linebreak'},headStyles:{fillColor:255,textColor:0,fontStyle:'bold',halign:'center',valign:'middle'},columnStyles:{0:{cellWidth:12,halign:'center'},1:{cellWidth:26}}});
+ let skip=0;
+ if(F.length){y=doc.lastAutoTable.finalY+8;if(y>H-55){doc.addPage();y=16}
+  doc.setFont('times','bold');doc.text('Foto pembersihan alat',15,y);y+=4;let x=15;const w=56,h=42;
+  for(const id of F){const im=await imgData(id);if(!im){skip++;continue}
+   if(x+w>W-15){x=15;y+=h+4}if(y+h>H-12){doc.addPage();y=16;x=15}
+   const r=Math.min(w/im.w,h/im.h);doc.addImage(im.d,'JPEG',x,y,im.w*r,im.h*r);x+=w+4}}
+ try{await DL.save({filename:'Laporan-Bulanan-'+A.nama.replace(/[^\w-]+/g,'-')+'-'+L.b+'.pdf',data:doc.output('blob')});if(skip)alert(skip+' foto tidak bisa dimasukkan ke PDF.')}
+ catch(e){if(!e||e.code!=='declined')alert('Gagal menyimpan PDF: '+((e&&e.message)||e))}}
+let DL=null;
+const blK=()=>new Date(K+'-01T00:00:00').toLocaleDateString('id-ID',{month:'long',year:'numeric'});
+function medC(){return S.tiket.map(t=>({t,r:rowsOf(t).map((e,i)=>Object.assign({_i:i},e)).filter(e=>rt(e).slice(0,7)===K)})).filter(c=>c.r.length).sort((a,b)=>ld(rt(a.r[0])).localeCompare(ld(rt(b.r[0]))))}
+function pdfLap(file,judul,head,body,cols){
+ if(!window.jspdf||!DL){alert('Unduh PDF belum tersedia di tampilan ini. Buka aplikasi lewat tautan di claude.ai dengan akun yang sudah masuk. Sementara, dialog cetak browser dibuka.');window.print();return}
+ const doc=new window.jspdf.jsPDF({orientation:'landscape',unit:'mm',format:'a4'}),W=doc.internal.pageSize.getWidth();
+ doc.setFont('times','bold');doc.setFontSize(12);doc.text(judul,W/2,14,{align:'center'});doc.text('INSTALASI RADIOLOGI',W/2,19,{align:'center'});
+ doc.setFontSize(11);doc.text('Bulan : '+blK(),15,28);
+ doc.autoTable({startY:31,head,body,theme:'grid',margin:{left:15,right:15},styles:{font:'times',fontSize:9.5,textColor:0,lineColor:0,lineWidth:.2,cellPadding:2,valign:'top',overflow:'linebreak'},headStyles:{fillColor:255,textColor:0,fontStyle:'bold',halign:'center',valign:'middle'},columnStyles:cols});
+ DL.save({filename:file,data:doc.output('blob')}).catch(e=>{if(!e||e.code!=='declined')alert('Gagal menyimpan PDF: '+((e&&e.message)||e))})}
+function pdfMedis(){const body=[];
+ medC().forEach((c,i)=>c.r.forEach((e,x)=>{const row=[];if(!x)row.push({content:String(i+1),rowSpan:c.r.length});
+  row.push(e.t?fmt(ld(e.t)):'-',an(e,c.t),e.j||'-',e.p||'-',e.tt?fmt(ld(e.tt)):'-',e.tn||'-',e.te||'-');body.push(row)}));
+ if(!body.length)return alert('Tidak ada data kerusakan di bulan ini.');
+ pdfLap('Laporan-Kerusakan-Medis-'+K+'.pdf','LAPORAN KERUSAKAN ALAT',[[{content:'NO',rowSpan:2},{content:'Kerusakan',colSpan:4},{content:'Tindak Lanjut',colSpan:3}],['Tanggal','Nama Alat dan Spesifikasi','Jenis Kerusakan','Petugas Radiologi','Tanggal','Keterangan','Petugas ATEM']],body,{0:{cellWidth:12,halign:'center'},1:{cellWidth:24},5:{cellWidth:24}})}
+function pdfNonMedis(){const R=S.nm.filter(n=>ld(n.tgl).slice(0,7)===K).sort((a,b)=>ld(a.tgl).localeCompare(ld(b.tgl)));
+ if(!R.length)return alert('Tidak ada data kerusakan di bulan ini.');
+ pdfLap('Laporan-Kerusakan-Non-Medis-'+K+'.pdf','LAPORAN KERUSAKAN ALAT NON MEDIS',[['No','Tanggal Lapor','Lokasi/Peralatan','Kategori','Uraian Kerusakan','Tindak Lanjut IPSRS','Tanggal Selesai','Status']],R.map((n,i)=>[String(i+1),fmt(ld(n.tgl)),n.lokasi,n.kat||'-',n.uraian,n.tl||'-',n.selesai?fmt(n.selesai):'-',n.status]),{0:{cellWidth:10,halign:'center'},1:{cellWidth:24,halign:'center'},3:{cellWidth:30,halign:'center'},6:{cellWidth:24,halign:'center'},7:{cellWidth:24,halign:'center'}})}
+let AS=null;
+const shrink=f=>new Promise(r=>{const i=new Image(),u=URL.createObjectURL(f);i.onload=()=>{const k=Math.min(1,1280/Math.max(i.width,i.height)),cv=document.createElement('canvas');cv.width=Math.round(i.width*k);cv.height=Math.round(i.height*k);cv.getContext('2d').drawImage(i,0,0,cv.width,cv.height);URL.revokeObjectURL(u);cv.toBlob(b=>r(b||f),'image/jpeg',.8)};i.onerror=()=>r(f);i.src=u});
+async function upF(el){const fs=[...el.files];if(!fs.length||(!AS&&!db))return;el.disabled=true;
+ try{const ids=[];for(const f of fs){let id;if(AS){id=(await AS.upload(await shrink(f))).id}else{id=await putFoto(f);if(!id)throw new Error('Foto tidak bisa diproses atau terlalu besar.')}ids.push(id)}
+  const d=getLap(),c=d.cek||{};await putLap({cek:Object.assign({},c,{fotos:(c.fotos||[]).concat(ids)}),rows:d.rows||[]})}
+ catch(e){alert('Gagal mengunggah foto: '+((e&&e.message)||e))}
+ el.disabled=false;el.value=''}
+async function delF(id){if(!await ask('Hapus foto ini?'))return;const d=getLap(),c=d.cek||{};
+ await putLap({cek:Object.assign({},c,{fotos:(c.fotos||[]).filter(x=>x!==id)}),rows:d.rows||[]});
+ await rmFile(id)}
+const kerL=t=>Array.isArray(t.ker)?t.ker:[{t:ld(t.tgl),a:t.alatId,an:t.alatNama,j:t.keluhan||'',p:t.pelapor||''}];
+const tdkL=t=>Array.isArray(t.tindak)?t.tindak:(t.log||[]).filter(l=>l.s!=='Baru').map(l=>({t:ld(l.t),n:l.n||'',e:t.teknisi||''}));
+const rowsOf=t=>{if(Array.isArray(t.rows))return t.rows;const A1=kerL(t),B1=tdkL(t),n=Math.max(A1.length,B1.length),r=[];for(let i=0;i<n;i++){const k=A1[i]||{},d=B1[i]||{};r.push({t:k.t||'',a:k.a||t.alatId,an:k.an||t.alatNama,j:k.j||'',p:k.p||'',tt:d.t||'',tn:d.n||'',te:d.e||''})}return r};
+const rt=e=>e.t||e.tt||'';
+const lastJ=t=>{const r=rowsOf(t),w=r.filter(x=>x.j);return w[w.length-1]||r[r.length-1]};
+const an=(e,t)=>{const a=S.alat.find(x=>x.id===(e.a||t.alatId))||{};return [a.nama||e.an||t.alatNama,a.tipe].filter(Boolean).join(' ')};
+let PRE=null;
+function kform(){const bl=blK(),d0=K===today().slice(0,7)?today():K+'-01',cs=S.tiket.filter(t=>rowsOf(t).some(e=>rt(e).slice(0,7)===K)).sort((a,b)=>ld(rt(rowsOf(a)[0])).localeCompare(ld(rt(rowsOf(b)[0]))));
+ return `<div class="card noprint"><b>Tambah data kerusakan / tindak lanjut</b>${S.alat.length?`<div class="row f"><select id="k_c"><option value="">Kasus baru</option>${cs.map(t=>{const r0=rowsOf(t)[0];return `<option value="${t.id}" ${t.id===PRE?'selected':''}>Tambah ke kasus: ${esc(t.alatNama)} — ${esc((r0.j||'').slice(0,40))} (${fmt(ld(rt(r0)))})</option>`}).join('')}</select></div>
+<p class="mu" style="margin:8px 0 0">Kerusakan (diisi radiografer)</p><div class="row f"><label class="mu">Tanggal kerusakan <input id="k_d" type="date" value="${d0}"></label><select id="k_a">${S.alat.map(a=>`<option value="${esc(a.id)}">${esc(a.nama)}${a.tipe?' — '+esc(a.tipe):''}</option>`).join('')}</select><input id="k_p" placeholder="Petugas radiologi"><textarea id="k_j" class="ta" rows="2" oninput="grow(this)" placeholder="Jenis kerusakan / yang dilakukan radiografer"></textarea></div>
+<p class="mu" style="margin:8px 0 0">Tindak lanjut (diisi ATEM, kosongkan kalau belum ada)</p><div class="row f"><label class="mu">Tanggal tindak lanjut <input id="k_t" type="date"></label><input id="k_e" placeholder="Petugas ATEM"><label class="mu">Status perbaikan <select id="k_s">${FLOW.slice(1).map(x=>`<option ${x==='Selesai'?'selected':''}>${x}</option>`).join('')}</select></label><textarea id="k_ket" class="ta" rows="2" oninput="grow(this)" placeholder="Keterangan tindak lanjut"></textarea><button onclick="addK()">Tambah</button></div>
+<p class="mu">Satu kali Tambah menjadi satu baris di laporan. Kerusakan dan tindak lanjut yang diisi bersamaan akan sejajar di baris yang sama. Daftar kasus hanya berisi kasus yang tercatat di ${bl}. Alat baru kembali "Layak pakai" saat statusnya Selesai.</p>`:'<p class="mu">Tambahkan alat dulu di menu Alat.</p>'}</div>`}
+async function addK(){const cid=$('#k_c').value,jk=$('#k_j').value.trim(),ket=$('#k_ket').value.trim(),e=$('#k_e').value.trim(),tT=$('#k_t').value,hasK=!!jk,hasT=!!(ket||e||tT);
+ if(!hasK&&!hasT)return alert('Isi jenis kerusakan atau tindak lanjut.');
+ if(!cid&&!hasK)return alert('Kasus baru harus diisi jenis kerusakannya.');
+ const t=cid?S.tiket.find(x=>x.id===cid):null;if(cid&&!t)return;
+ const d0=$('#k_d').value||today(),aid=(hasK||!t)?$('#k_a').value:(rowsOf(t).slice(-1)[0].a||t.alatId),a2=S.alat.find(x=>x.id===aid);
+ if(!a2)return alert('Pilih alat.');
+ const row={t:hasK?d0:'',a:a2.id,an:a2.nama,j:jk,p:$('#k_p').value.trim(),tt:hasT?(tT||d0):'',tn:ket,te:e};
+ const st=hasT?$('#k_s').value:(t&&t.status!=='Selesai'?t.status:'Baru');
+ K=rt(row).slice(0,7);PRE=null;
+ const log=[];if(hasK)log.push({t:d0,s:t&&t.status!=='Selesai'?t.status:'Baru',n:t?'Catatan radiografer: '+jk:'Laporan dibuat'});if(hasT)log.push({t:row.tt,s:st,n:ket});
+ const al=st==='Selesai'?'Layak pakai':'Rusak';
+ if(!t){await add('tiket',{alatId:a2.id,alatNama:a2.nama,keluhan:jk,pelapor:row.p,status:st,teknisi:e,tgl:d0,log,rows:[row]});await upd('alat',a2.id,{status:al});return}
+ const o={status:st,log:(t.log||[]).concat(log),rows:rowsOf(t).concat([row])};if(e)o.teknisi=e;
+ await upd('tiket',cid,o);await upd('alat',a2.id,{status:al})}
+async function delRow(id,i){const t=S.tiket.find(x=>x.id===id);if(!t)return;const r=rowsOf(t),last=r.length<2;
+ if(!await ask(last?'Hapus data ini dari laporan? Ini satu-satunya baris di kasusnya, jadi seluruh kasus beserta bukti form yang diunggah ikut terhapus.':'Hapus baris ini dari laporan?'))return;
+ if(last)return killCase(id);
+ const R=r.filter((_,j)=>j!==i),o={rows:R};
+ if(i===0){const f=R[0];Object.assign(o,{alatId:f.a||t.alatId,alatNama:f.an||t.alatNama,keluhan:f.j||'',pelapor:f.p||'',tgl:rt(f)})}
+ await upd('tiket',id,o)}
+async function killCase(id){const t=S.tiket.find(x=>x.id===id);if(!t)return;
+ if(db){try{await db.collection('tiket').doc(id).delete()}catch(e){return fail(e)}}else{S.tiket=S.tiket.filter(x=>x.id!==id);lsSave();render()}
+ for(const b of (t.bukti||[]))await rmFile(b.id);
+ if(!S.tiket.some(x=>x.id!==id&&x.status!=='Selesai'&&x.alatId===t.alatId)&&S.alat.some(a=>a.id===t.alatId))await upd('alat',t.alatId,{status:'Layak pakai'})}
+const plus=(s,n)=>{if(!s)return '';const d=new Date(s+'T00:00:00');d.setFullYear(d.getFullYear()+n);return d.toLocaleDateString('en-CA')};
+const left=s=>s?Math.ceil((new Date(s+'T00:00:00')-new Date(today()+'T00:00:00'))/864e5):null;
+const cel=(t,du,w)=>{if(!t)return '-';const l=left(du);return fmt(t)+'<br><span class="'+(l<0?'er':l<=w?'wr':'mu')+'">berikutnya '+fmt(du)+'</span>'};
+function jadwal(A){const r=[];A.forEach(a=>{[['Kalibrasi',plus(a.kalT,1),30],['Uji kesesuaian',plus(a.ukes,4),180]].forEach(([j,t,w])=>{const l=left(t);if(l!==null&&l<=w)r.push({a,j,t,l})})});return r.sort((x,y)=>x.l-y.l)}
+let E='';
+function aform(){const e=S.alat.find(x=>x.id===E)||{},v=k=>esc(e[k]||'');
+ return `<h2>${e.id?'Edit alat':'Tambah alat'}</h2><div class="card"><div class="row f"><input id="a_n" placeholder="Nama alat (mis. X-Ray Mobile)" value="${v('nama')}"><input id="a_t" placeholder="Merk / tipe" value="${v('tipe')}"><input id="a_s" placeholder="Nomor seri" value="${v('serial')}"><input id="a_r" placeholder="Ruangan" value="${v('ruang')}"><label class="mu">Kalibrasi tahun ini (tanggal) <input id="a_c" type="date" value="${v('kalT')}"></label><label class="mu">Uji kesesuaian terakhir <input id="a_u" type="date" value="${v('ukes')}"></label><label class="mu">Uji paparan terakhir <input id="a_p" type="date" value="${v('paparan')}"></label>${e.id?`<select id="a_st"><option ${e.status!=='Rusak'?'selected':''}>Layak pakai</option><option ${e.status==='Rusak'?'selected':''}>Rusak</option></select><button onclick="saveA()">Simpan perubahan</button><button onclick="E='';render()" style="background:none;color:var(--tx)">Batal</button>`:'<button onclick="addA()">Tambah</button>'}</div><p class="mu">Kalibrasi dihitung berlaku 1 tahun, uji kesesuaian 4 tahun (peringatan muncul 6 bulan sebelumnya). Uji paparan hanya dicatat.</p></div>`}
+async function delA(id){const a=S.alat.find(x=>x.id===id);if(!a)return;const n=S.tiket.filter(t=>t.alatId===id).length;
+ if(!await ask('Hapus alat "'+a.nama+'" dari daftar?'+(n?' Ada '+n+' kasus kerusakan untuk alat ini. Kasusnya tetap ada di laporan, tapi alatnya tidak bisa dipilih lagi.':'')))return;
+ if(E===id)E='';
+ if(db){try{await db.collection('alat').doc(id).delete()}catch(e){fail(e)}}else{S.alat=S.alat.filter(x=>x.id!==id);lsSave();render()}}
+function editA(id){E=id;render();scrollTo({top:0,behavior:'smooth'})}
+async function saveA(){const nama=$('#a_n').value.trim();if(!nama)return alert('Nama alat wajib diisi.');
+ const id=E;E='';
+ await upd('alat',id,{nama,tipe:$('#a_t').value.trim(),serial:$('#a_s').value.trim(),ruang:$('#a_r').value.trim(),kalT:$('#a_c').value,ukes:$('#a_u').value,paparan:$('#a_p').value,status:$('#a_st').value});
+ for(const t of S.tiket.filter(t=>t.alatId===id&&t.alatNama!==nama))await upd('tiket',t.id,{alatNama:nama});
+ render()}
+let K=today().slice(0,7);
+function kru(){const bl=blK(),C=medC();
+ const rows=C.map((c,i)=>c.r.map((e,x)=>'<tr>'+(x?'':`<td rowspan="${c.r.length}">${i+1}</td>`)+`<td>${e.t?fmt(ld(e.t)):'-'}</td><td>${esc(an(e,c.t))}</td><td>${esc(e.j||'-')}</td><td>${esc(e.p||'-')}</td><td>${e.tt?fmt(ld(e.tt)):'-'}</td><td>${esc(e.tn||'-')}</td><td>${esc(e.te||'-')}</td><td class="noprint"><button class="eb" onclick="editR('${c.t.id}',${e._i})">Edit</button> <button class="eb" onclick="delRow('${c.t.id}',${e._i})">Hapus</button></td></tr>`).join('')).join('');
+ return `<div class="row noprint" style="justify-content:space-between;margin-top:16px"><h2 style="margin:0">Laporan Kerusakan Medis</h2><div class="row"><input type="month" value="${K}" onchange="if(this.value){K=this.value;this.blur();render()}"></div></div>${EK?kedit():kform()}
+<div class="card rep"><div style="text-align:center"><b>LAPORAN KERUSAKAN ALAT<br>INSTALASI RADIOLOGI</b></div><p><b>Bulan : ${bl}</b></p><div class="tw"><table><tr><th rowspan="2">NO</th><th colspan="4">Kerusakan</th><th colspan="3">Tindak Lanjut</th><th class="noprint" rowspan="2"></th></tr><tr><th>Tanggal</th><th>Nama Alat dan Spesifikasi</th><th>Jenis Kerusakan</th><th>Petugas Radiologi</th><th>Tanggal</th><th>Keterangan</th><th>Petugas ATEM</th></tr>${rows||'<tr><td colspan="9" class="mu">Tidak ada kerusakan tercatat bulan ini.</td></tr>'}</table></div></div>
+<div class="noprint" style="margin:10px 0 4px"><button class="p" onclick="pdfMedis()">Cetak (unduh PDF)</button></div>
+<h2 class="noprint">Kelola kasus dan ceklis bukti form kerusakan alat</h2><div class="noprint">${medBukti(C.map(c=>c.t))}</div>`}
+function render(){
+ $('#nav').innerHTML=[['dash','Dasbor'],['alat','Alat'],['lap','Laporan Bulanan'],['kru','Laporan Kerusakan Medis'],['nm','Laporan Kerusakan Non Medis']].map(([k,l])=>`<button class="${tab===k?'on':''}" onclick="go('${k}')">${l}</button>`).join('');
+ $('#mode').textContent=db?'Data tersimpan online dan dibagikan ke semua pengguna yang punya akses.':'Mode lokal: data hanya tersimpan di browser ini.';
+ const act=document.activeElement;if(act&&/^(INPUT|SELECT|TEXTAREA)$/.test(act.tagName)&&act.id&&act.id!=='')return;
+ $('#v').innerHTML=({dash,alat,lap,kru,nm:nonmedis})[tab]();if(document.querySelectorAll){document.querySelectorAll('textarea.ta').forEach(grow);document.querySelectorAll('img[data-fid]').forEach(i=>{if(!i.getAttribute('src'))loadFoto(i.dataset.fid)})}}
+render();
+(async()=>{try{db=await claude.use('db')}catch(e){db=null}
+ try{AS=await claude.use('assets')}catch(e){AS=null}
+ try{DL=await claude.use('downloads')}catch(e){DL=null}
+ if(db){sub('alat');sub('tiket');sub('lap');sub('nm')}else{S=lsLoad()||S;S.lap=S.lap||[];S.nm=S.nm||[]}
+ render()})();
+</script></body></html>
